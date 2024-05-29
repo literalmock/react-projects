@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="in" type="text" placeholder="Enter Task">
+    <br>
+    <button class="but" onclick="addtask()"> Add Task</button>
+    <div id="container">
+        <ul id="task">
+            <li>hi</li>
+        </ul>
+
+        <button class="read" onclick="Markread()"> Mark as Read </button>
+    </div>
+    <script>
+        function addtask() {
+            const task = document.getElementById("in")
+            const button = document.getElementById("but")
+            const container = document.getElementById("task")
+            const h3 = task.value
+            var li = document.createElement("li")
+            let newtask = li.appendChild(document.createTextNode(task.value))
+            container.appendChild(li)
+            // console.log(container);
+        }
+        function Markread() {
+            let task = document.getElementById("task")
+            let li = document.querySelector("li")
+            task.removeChild(li[3]);
+            console.log(li);
+        }
+
+    </script>
+</body>
+
+</html>
